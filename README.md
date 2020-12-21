@@ -1,0 +1,2 @@
+# AptFast-QuickInstaller-Debian
+dd
