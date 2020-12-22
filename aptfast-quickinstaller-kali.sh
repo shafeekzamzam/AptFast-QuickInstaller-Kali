@@ -1,10 +1,13 @@
 #!/bin/sh
+
 clear
+
 #================================
 #1.Install Aria2
 #================================
-sudo apt-get install aria2
+apt-get install aria2
 echo "++======================Aria2 Installed======================++"
+
 
 #================================
 #2.Add Ubuntu Repo for APTFAST
@@ -17,23 +20,24 @@ echo "deb http://http.kali.org/kali kali-last-snapshot main non-free contrib" | 
 echo "deb http://http.kali.org/kali kali-experimental main non-free contrib" | sudo tee -a /etc/apt/sources.list      #for kali tools
 
 echo "++======================Repo Updated with Ubuntu & Kali sources======================++"
+
+
 #================================
 #3.Install APT FAST
 #================================
 #sudo add-apt-repository ppa:apt-fast/stable
-#sudo apt-get update
-#sudo apt-get -y install apt-fast
-#/etc/apt-fast.conf
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2166B8DE8BDC3367D1901C11EE2FF37CA8DA16B
-sudo apt-get update
-sudo apt-get install apt-fast
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2166B8DE8BDC3367D1901C11EE2FF37CA8DA16B
+apt-get update
+apt-get install apt-fast
 
 #Remove Ubuntu Repos
 
 echo "++======================Mesg======================++"
+
+
 #================================
-#4.Select Required Mirrors
+#4.Configure APT FAST & Mirrors
 #================================
 #wget pulls the latest mirror status from https://launchpad.net/ubuntu/+archivemirrors.    
 #The first grep extracts mirrors that are up-to-date or six-hours behind, along with 8 lines of previous context which includes the actual ftp/http URLs    The second grep extracts these ftp/http URLs
@@ -42,16 +46,18 @@ echo "++======================Mesg======================++"
 #| grep -P -B8 "status(UP|SIX)" \ 
 #| grep -o -P "(f|ht)tp://[^\"]*"
 
+#/etc/apt-fast.conf
 
 echo "++======================Mesg======================++"
+
 
 #================================
 #5.APTFAST Upgrade & Clean
 #================================
 
-sudo apt-fast upgrade
-sudo apt-fast clean
-sudo apt-fast autoclean
+apt-fast upgrade
+apt-fast clean
+apt-fast autoclean
 
 echo "++======================Mesg======================++"
 
