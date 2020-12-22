@@ -9,10 +9,14 @@ echo "++======================Aria2 Installed======================++"
 #================================
 #2.Add Ubuntu Repo for APTFAST
 #================================
-#deb http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main 
-#deb-src http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main
+echo "deb http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list            #for APTFAST
+echo "deb-src http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list        #for APTFAST
 
-echo "++======================Mesg======================++"
+echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee -a /etc/apt/sources.list           #for kali tools
+echo "deb http://http.kali.org/kali kali-last-snapshot main non-free contrib" | sudo tee -a /etc/apt/sources.list     #for kali tools
+echo "deb http://http.kali.org/kali kali-experimental main non-free contrib" | sudo tee -a /etc/apt/sources.list      #for kali tools
+
+echo "++======================Repo Updated with Ubuntu & Kali sources======================++"
 #================================
 #3.Install APT FAST
 #================================
