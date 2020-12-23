@@ -32,7 +32,7 @@ apt-get update
 apt-get install apt-fast
 
 #Remove Ubuntu Repos
-
+#save the copy of original source list and over write here.
 echo "++======================Mesg======================++"
 
 
